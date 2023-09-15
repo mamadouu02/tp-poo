@@ -1,14 +1,14 @@
 public class TestRational {
     
     public static void main(String[] args) {
-        Rational ratio = new Rational(3, 2);
-        System.out.println("ratio.num : " + ratio.getNum());
-        System.out.println("ratio.denom : " + ratio.getDenom());
-        System.out.println("ratio : " + ratio.toString());
+        Rational r = new Rational(3, 2);
+        System.out.println("r.num = " + r.getNum());
+        System.out.println("r.denom = " + r.getDenom());
+        System.out.println("r = " + r);
         Rational other = new Rational(1, 3);
-        ratio.mult(other);
-        System.out.println("ratio : " + ratio.toString());
-        ratio.add(other);
-        System.out.println("ratio : " + ratio.toString());
+        r.mult(other);
+        System.out.println("3 / 2 + 1 / 3 = " + r);
+        r.add(other);
+        System.out.println("1 / 2 + 1 / 3 = " + r);
     }
 }

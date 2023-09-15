@@ -4,14 +4,14 @@ public class Rational {
     private int denom;
 
     public Rational(int num, int denom) {
-        int gcd = pgcd(num, denom);
+        int gcd = Rational.gcd(num, denom);
 
-        if (denom != 0)
-            this.denom = denom / gcd;
-        else
-            throw new IllegalArgumentException("Le dénominateur doit être non nul !");
+        if (denom == 0) {
+            throw new IllegalArgumentException("The denominator must be non-zero");
+        }
         
         this.num = num / gcd;
+        this.denom = denom / gcd;
     }
 
     public int getNum() {
@@ -38,18 +38,20 @@ public class Rational {
         this.reduce();
     }
 
-    public int pgcd(int a, int b) {
-        if (b == 0)
+    private static int gcd(int a, int b) {
+        if (b == 0) {
             return a;
-        else
-            return pgcd(b, a % b);
+        }
+
+        return gcd(b, a % b);
     }
 
     public void reduce() {
-        int gcd = pgcd(this.num, this.denom);
+        int gcd = Rational.gcd(this.num, this.denom);
 
-        if (gcd > 1)
+        if (gcd > 1) {
             this.num /= gcd;
             this.denom /= gcd;
+        }
     }
 }
