@@ -7,8 +7,13 @@ public class Vector {
     }
 
     public String toString() {
-        String s = "";
         int size = this.tab.length;
+
+        if (size == 0) {
+            return "( )";
+        }
+        
+        String s = "";
 
         for (int i = 0; i < size - 1; i++) {
             s += tab[i].toString() + ", ";
