@@ -7,8 +7,9 @@ public class TestRational {
         System.out.println("r = " + r);
         Rational other = new Rational(1, 3);
         r.mult(other);
-        System.out.println("3 / 2 + 1 / 3 = " + r);
+        System.out.println("3 / 2 * 1 / 3 = " + r);
         r.add(other);
         System.out.println("1 / 2 + 1 / 3 = " + r);
+        System.out.println("5 / 6 * 1 / 3 = " + Rational.mult(r, other));
     }
 }

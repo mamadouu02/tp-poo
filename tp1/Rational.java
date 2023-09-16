@@ -54,4 +54,10 @@ public class Rational {
             this.denom /= gcd;
         }
     }
+
+    public static Rational mult(Rational a, Rational b) {
+        Rational r = new Rational(a.num * b.num, a.denom * b.denom);
+        r.reduce();
+        return r;
+    }
 }
