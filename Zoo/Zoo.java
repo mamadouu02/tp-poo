@@ -25,6 +25,16 @@ class Zoo {
         }
     }
 
+    public double calculCoutGlobal() {
+        double cout = 0;
+        
+        for (Animal a : animaux) {
+            cout += a.calculCout();
+        }
+
+        return cout;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

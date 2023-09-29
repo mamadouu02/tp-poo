@@ -1,19 +1,25 @@
 public class Canard extends Animal {
     
-    private String couleurPlume;
+    private String couleurPlumes;
 
     public Canard(String nom, int poids, String couleurPlume) {
         super(nom, poids);
-        this.couleurPlume = couleurPlume;
+        this.couleurPlumes = couleurPlume;
+        setRegime(new Regime("graines", 0.25));
+        setQte(1.0);
     }
 
-    public String getCouleurPlume() {
-        return this.couleurPlume;
+    public String getCouleurPlumes() {
+        return this.couleurPlumes;
     }
 
     @Override
-    public String crier() {
-        super.crier();
-        System.out.println("Ce canard de " + this.getPoids() + "kg aux belles plumes " + this.couleurPlume + " !");
+    public void crier() {
+        System.out.println(this.getNom() + " crie ... Ce canard de " + this.getPoids() + "kg aux belles plumes " + this.couleurPlumes + " !");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " est un canard aux plumes " + this.couleurPlumes;
     }
 }
