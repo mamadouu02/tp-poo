@@ -1,8 +1,7 @@
 public class UnaireCos extends ExpUnaire {
 
     public UnaireCos(ExpAbstraite op) {
-        super(op);
-        setOperator("cos");
+        super(op, "cos");
     }
 
     @Override

@@ -2,13 +2,21 @@ import java.util.HashMap;
 
 public class Env {
 
-    private HashMap<String, Double> map = new HashMap<>();
+    private HashMap<String, Evaluable> map;
 
-    public void associer(String nom, double valeur) {
+    public Env() {
+        this.map = new HashMap<>();
+    }
+
+    public void associer(String nom, Evaluable valeur) {
         map.put(nom, valeur);
     }
 
-    public double obtenirValeur(String nom) {
+    public void associer(String nom, double valeur) {
+        map.put(nom, new Constante(valeur));
+    }
+
+    public Evaluable obtenirValeur(String nom) {
         if (map.containsKey(nom)) {
             return map.get(nom);
         }

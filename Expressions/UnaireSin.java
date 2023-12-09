@@ -1,8 +1,7 @@
 public class UnaireSin extends ExpUnaire {
 
     public UnaireSin(ExpAbstraite op) {
-        super(op);
-        setOperator("sin");
+        super(op, "sin");
     }
 
     @Override

@@ -13,6 +13,6 @@ public class Variable extends ExpAbstraite {
 
     @Override
     public double evaluer(Env env) {
-        return env.obtenirValeur(this.nom);
+        return env.obtenirValeur(this.nom).evaluer();
     }
 }

@@ -4,9 +4,10 @@ public abstract class ExpBinaire extends ExpAbstraite {
     private ExpAbstraite opDroit;
     private String operator;
 
-    public ExpBinaire(ExpAbstraite opGauche, ExpAbstraite opDroit) {
+    public ExpBinaire(ExpAbstraite opGauche, ExpAbstraite opDroit, String operator) {
         this.opGauche = opGauche;
         this.opDroit = opDroit;
+        setOperator(operator);
     }
 
     public ExpAbstraite getOpGauche() {

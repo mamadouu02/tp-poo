@@ -3,8 +3,9 @@ public abstract class ExpUnaire extends ExpAbstraite {
     private ExpAbstraite op;
     private String operator;
     
-    public ExpUnaire(ExpAbstraite op) {
+    public ExpUnaire(ExpAbstraite op, String operator) {
         this.op = op;
+        setOperator(operator);
     }
 
     public ExpAbstraite getOp() {
