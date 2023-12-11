@@ -5,13 +5,13 @@ public class GrapheMap implements Graphe {
     private Map<String, Set<String>> sommets;
 
     public GrapheMap() {
-        this.sommets = new HashMap<String, Set<String>>();
+        this.sommets = new HashMap<>();
     }
 
     @Override
     public void ajouteSommet(String label) {
         if (!sommets.containsKey(label)) {
-            sommets.put(label, new HashSet<String>());
+            sommets.put(label, new HashSet<>());
         }
     }
 
@@ -30,9 +30,9 @@ public class GrapheMap implements Graphe {
 
     @Override
     public boolean existeChemin(String labelDepart, String labelArrivee) {
-        Queue<String> queue = new LinkedList<String>();
+        Queue<String> queue = new LinkedList<>();
         queue.add(labelDepart);
-        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        Map<String, Boolean> map = new HashMap<>();
 
         for (String label : sommets.keySet()) {
             map.put(label, false);

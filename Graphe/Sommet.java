@@ -1,13 +1,13 @@
 import java.util.*;
 
 public class Sommet {
-    
+
     private String label;
     private Set<String> successeurs;
 
     public Sommet(String label) {
         this.label = label;
-        this.successeurs = new HashSet<String>();
+        this.successeurs = new HashSet<>();
     }
 
     public Set<String> getSuccesseurs() {
@@ -24,13 +24,8 @@ public class Sommet {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Sommet) {
-            Sommet other = (Sommet)obj;
-            return this.label.equals(other.label);
-        }
-
-        return false;
+    public boolean equals(Object other) {
+        return other instanceof Sommet && this.label.equals(((Sommet) other).label);
     }
 
     @Override

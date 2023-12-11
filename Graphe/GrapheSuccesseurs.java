@@ -5,7 +5,7 @@ public class GrapheSuccesseurs implements Graphe {
     private Map<String, Sommet> sommets;
 
     public GrapheSuccesseurs() {
-        this.sommets = new HashMap<String, Sommet>();
+        this.sommets = new HashMap<>();
     }
 
     @Override
@@ -31,9 +31,9 @@ public class GrapheSuccesseurs implements Graphe {
 
     @Override
     public boolean existeChemin(String labelDepart, String labelArrivee) {
-        Queue<String> queue = new LinkedList<String>();
+        Queue<String> queue = new LinkedList<>();
         queue.add(labelDepart);
-        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        Map<String, Boolean> map = new HashMap<>();
 
         for (String label : sommets.keySet()) {
             map.put(label, false);
